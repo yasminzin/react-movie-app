@@ -39,11 +39,15 @@ export default function NavbarComp() {
             className={`${styles.collapse} p-1`}
           >
             <Nav className="ms-auto">
-              <Nav.Link href="/" className="mx-1">
-                Movies
+              <Nav.Link className="mx-1">
+                <NavLink className="text-muted text-decoration-none" to="/">
+                  Movies
+                </NavLink>
               </Nav.Link>
-              <Nav.Link href="/tv" className="mx-1">
-                TV Shows
+              <Nav.Link className="mx-1">
+                <NavLink className="text-muted text-decoration-none" to="/tv">
+                  TV Shows
+                </NavLink>
               </Nav.Link>
               <NavDropdown title="❤ Dropdown" id="basic-nav-dropdown">
                 <NavDropdown.Item className="mx-1">
