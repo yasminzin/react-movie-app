@@ -6,6 +6,7 @@ import { setLanguage } from "../store/slices/languageSlice";
 import Form from "react-bootstrap/Form";
 // import "../styles/global.css";
 import Dropdown from "react-bootstrap/Dropdown";
+import TVshowswishlist from "../pages/TVshowsWishlist";
 
 export default function Navbar() {
   const MoviesWishlist = useSelector((state) =>
@@ -55,82 +56,45 @@ export default function Navbar() {
                   TV Shows
                 </NavLink>
               </li>
-              {/* <li className="nav-item mx-1">
-                <select
-                  value={language}
-                  onChange={handleLanguageChange}
-                  className={`nav-link fw-semibold text-center ${styles.language}`}
-                >
-                  {["en", "ar", "fr", "zh"].map((lang) => (
-                    <option key={lang} value={lang}>
-                      {lang.toUpperCase()}
-                    </option>
-                  ))}
-                </select>
-              </li> */}
               <Dropdown>
-                <Dropdown.Toggle variant="success" id="dropdown-basic">
+                <Dropdown.Toggle
+                  variant="transparent"
+                  id="dropdown-basic"
+                  className="text-muted"
+                >
                   <i className="fa-solid fa-heart me-1 fs-5"></i> Wishlist
                 </Dropdown.Toggle>
 
                 <Dropdown.Menu>
-                  <Dropdown.Item to="/movies/wishlist" end>
-                    <span>
-                      Movies
-                      <sup className="ms-1 bg-light py-1 px-2 rounded-2">
-                        {MoviesWishlist.length}
-                      </sup>
-                    </span>
+                  <Dropdown.Item>
+                    <NavLink
+                      to="/movies/wishlist"
+                      className="text-decoration-none text-dark"
+                    >
+                      <span>
+                        Movies
+                        <sup className="ms-1 bg-light py-1 px-2 rounded-2">
+                          {MoviesWishlist.length}
+                        </sup>
+                      </span>
+                    </NavLink>
                   </Dropdown.Item>
-                  <Dropdown.Item to="/tv/wishlist" end>
-                    <span>
-                      Movies
-                      <sup className="ms-1 bg-light py-1 px-2 rounded-2">
-                        {MoviesWishlist.length}
-                      </sup>
-                    </span>
+                  <Dropdown.Item>
+                    <NavLink
+                      to="/tv/wishlist"
+                      className="text-decoration-none text-dark"
+                    >
+                      <span>
+                        TV Shows
+                        <sup className="ms-1 bg-light py-1 px-2 rounded-2">
+                          {ShowsWishlist.length}
+                        </sup>
+                      </span>
+                    </NavLink>
                   </Dropdown.Item>
                 </Dropdown.Menu>
               </Dropdown>
-              <li className="nav-item dropdown">
-                <a
-                  className="nav-link dropdown-toggle fw-semibold"
-                  href="#"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  <i className="fa-solid fa-heart me-1 fs-5"></i> Wishlist
-                </a>
-                <ul className="dropdown-menu p-2">
-                  <NavLink
-                    className="nav-link fw-semibold"
-                    to="/movies/wishlist"
-                    end
-                  >
-                    <span>
-                      Movies
-                      <sup className="ms-1 bg-light py-1 px-2 rounded-2">
-                        {MoviesWishlist.length}
-                      </sup>
-                    </span>
-                  </NavLink>
-                  <NavLink
-                    className="nav-link fw-semibold"
-                    to="/tv/wishlist"
-                    end
-                  >
-                    <span>
-                      TV Shows
-                      <sup className="ms-1 bg-light py-1 px-2 rounded-2">
-                        {ShowsWishlist.length}
-                      </sup>
-                    </span>
-                  </NavLink>
-                </ul>
-              </li>
             </ul>
-          </div>
           <Form.Group>
             <Form.Select
               value={language}
@@ -143,6 +107,7 @@ export default function Navbar() {
               <option value="zh">中文</option>
             </Form.Select>
           </Form.Group>
+          </div>
         </div>
       </nav>
     </>
