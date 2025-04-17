@@ -49,7 +49,7 @@ export default function NavbarComp() {
                   TV Shows
                 </NavLink>
               </Nav.Link>
-              <NavDropdown title="❤ Dropdown" id="basic-nav-dropdown">
+              <NavDropdown title="❤ Wishlist" id="basic-nav-dropdown">
                 <NavDropdown.Item className="mx-1">
                   <NavLink
                     className="text-muted text-decoration-none"
