@@ -1,5 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
-import WishlistReducer from "./slices/WishListSlice";
+import WishlistReducer from "./slices/WishlistSlice";
 import languageReducer from "./slices/languageSlice";
 
 const store = configureStore({
