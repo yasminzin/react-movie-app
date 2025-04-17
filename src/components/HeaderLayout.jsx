@@ -1,11 +1,11 @@
 import React from "react";
 import { Outlet } from "react-router";
-import Navbar from "./Navbar";
+import NavbarComp from "./NavbarComp";
 
 export default function HeaderLayout() {
   return (
     <div>
-      <Navbar />
+      <NavbarComp />
       <Outlet />
     </div>
   );
