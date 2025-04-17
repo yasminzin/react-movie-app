@@ -6,7 +6,6 @@ import store from "./store/store.js";
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { Provider } from "react-redux";
-// import { store } from "./store/storeLanguage.js";
 import createAxiosInstance from "./apis/config";
 
 const axiosInstance = createAxiosInstance(store);
