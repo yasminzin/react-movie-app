@@ -7,7 +7,7 @@ import { useSelector } from "react-redux";
 import "bootstrap/dist/css/bootstrap.min.css";
 import SearchResult from "./pages/searchPage/SearchResults";
 import React from "react";
-import NavbarComp from "./components/NavbarComp";
+// import NavbarComp from "./components/NavbarComp";
 import  styles from './styles/Navbar.module.css'
 const TVShows = lazy(() => import("./pages/TV Shows"));
 const NotFound = lazy(() => import("./pages/NotFound"));
