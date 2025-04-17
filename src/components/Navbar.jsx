@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { setLanguage } from "../store/slices/languageSlice";
 import Form from "react-bootstrap/Form";
 // import "../styles/global.css";
+import Dropdown from "react-bootstrap/Dropdown";
 
 export default function Navbar() {
   const MoviesWishlist = useSelector((state) =>
@@ -67,6 +68,30 @@ export default function Navbar() {
                   ))}
                 </select>
               </li> */}
+              <Dropdown>
+                <Dropdown.Toggle variant="success" id="dropdown-basic">
+                  <i className="fa-solid fa-heart me-1 fs-5"></i> Wishlist
+                </Dropdown.Toggle>
+
+                <Dropdown.Menu>
+                  <Dropdown.Item to="/movies/wishlist" end>
+                    <span>
+                      Movies
+                      <sup className="ms-1 bg-light py-1 px-2 rounded-2">
+                        {MoviesWishlist.length}
+                      </sup>
+                    </span>
+                  </Dropdown.Item>
+                  <Dropdown.Item to="/tv/wishlist" end>
+                    <span>
+                      Movies
+                      <sup className="ms-1 bg-light py-1 px-2 rounded-2">
+                        {MoviesWishlist.length}
+                      </sup>
+                    </span>
+                  </Dropdown.Item>
+                </Dropdown.Menu>
+              </Dropdown>
               <li className="nav-item dropdown">
                 <a
                   className="nav-link dropdown-toggle fw-semibold"
