@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
+body{
+  font-family: "Source Sans 3", sans-serif;
+
+}
+.container {
+    width: 90%;
+    margin: 20px auto;
+  }
+  
+  .card {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+   
+    padding: 20px;
+    border-radius: 16px;
+    color: #000;
+  }
+  
+  .imgContainer {
+    flex: 1 1 300px;
+  }
+  
+  .poster {
+    width: 100%;
+    border-radius: 12px;
+  }
+  
+  .details {
+    flex: 2 1 500px;
+  }
+  
+  .title {
+    font-size: 48px;
+    margin-bottom: 10px;
+  }
+  
+  .date,
+  .language,
+  .seasons {
+   
+    font-size: 16px;
+    margin: 5px 0;
+  }
+  
+  .rating {
+    margin: 10px 0;
+    font-size: 2rem;
+    color: gold;
+  }
+  
+  .overview {
+    font-size: 20px;
+    line-height: 1.5;
+    margin-top: 15px;
+  }
+  
+  .genres {
+    margin-top: 20px;
+  }
+  
+  .genre {
+    display: inline-block;
+    background: #ffe353;
+    color: black;
+    font-weight: bold;
+    padding: 8px 15px;
+    margin: 5px;
+    border-radius: 25px;
+    font-size: 14px;
+  }
+  
