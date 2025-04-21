@@ -21,9 +21,9 @@
   background-color: #ffe353;
 }
 
-.dropdown:active {
+.dropdownActive:active {
   background-color: rgb(239, 239, 239) !important;
-  color: #000000 !important
+  color: #000000 !important;
 }
 
 /* .languageSelect {

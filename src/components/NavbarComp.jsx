@@ -32,35 +32,49 @@ export default function NavbarComp() {
     <>
       <Navbar expand="lg" className={`${styles.navbar}`}>
         <Container>
-          <Navbar.Brand href="/" className="fw-bold">Movie App</Navbar.Brand>
+          <Navbar.Brand href="/" className="fw-bold">
+            Movie App
+          </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse
             id="basic-navbar-nav"
             className={`${styles.collapse} p-1`}
           >
             <Nav className="ms-auto">
-              <Nav.Link className="mx-2 fw-semibold" as={NavLink} to='/' end>
-                  Movies
+              <Nav.Link className="mx-2 fw-semibold" as={NavLink} to="/" end>
+                Movies
               </Nav.Link>
-              <Nav.Link className="mx-2 fw-semibold" as={NavLink} to='/tv' end>
-                  TV Shows
+              <Nav.Link className="mx-2 fw-semibold" as={NavLink} to="/tv" end>
+                TV Shows
               </Nav.Link>
-              <NavDropdown title="❤ Wishlist" id="basic-nav-dropdown" className="mx-2 px-1">
-                <NavDropdown.Item className={`fw-semibold ${styles.dropdown}`} href='/movies/wishlist'>
-                    <span>
-                      Movies
-                      <sup className="ms-1 bg-light py-1 px-2 rounded-2">
-                        {MoviesWishlist.length}
-                      </sup>
-                    </span>
+              <NavDropdown
+                title="❤ Wishlist"
+                id="basic-nav-dropdown"
+                className="mx-2 px-1"
+              >
+                <NavDropdown.Item
+                  className={`fw-semibold ${styles.dropdownActive}`}
+                  as={Link}
+                  to="/movies/wishlist"
+                >
+                  <span>
+                    Movies
+                    <sup className="ms-1 bg-light py-1 px-2 rounded-2">
+                      {MoviesWishlist.length}
+                    </sup>
+                  </span>
                 </NavDropdown.Item>
-                <NavDropdown.Item className={`fw-semibold ${styles.dropdown}`} href='/tv/wishlist'>
-                    <span>
-                      TV Shows
-                      <sup className="ms-1 bg-light py-1 px-2 rounded-2">
-                        {ShowsWishlist.length}
-                      </sup>
-                    </span>
+                <NavDropdown.Item
+                  className={`fw-semibold ${styles.dropdownActive}`}
+                  as={Link}
+                  to="/tv/wishlist"
+                >
+                  <span>
+                    TV Shows
+                    <sup className="ms-1 bg-light py-1 px-2 rounded-2">
+                      {ShowsWishlist.length}
+                    </sup>
+                  </span>
                 </NavDropdown.Item>
               </NavDropdown>
               <Form.Group className="mx-2">
