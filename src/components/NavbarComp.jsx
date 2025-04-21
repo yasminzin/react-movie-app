@@ -39,42 +39,28 @@ export default function NavbarComp() {
             className={`${styles.collapse} p-1`}
           >
             <Nav className="ms-auto">
-              <Nav.Link className="mx-2">
-                <NavLink className="text-muted text-decoration-none" to="/">
+              <Nav.Link className="mx-2 fw-semibold" as={NavLink} to='/' end>
                   Movies
-                </NavLink>
               </Nav.Link>
-              <Nav.Link className="mx-2">
-                <NavLink className="text-muted text-decoration-none" to="/tv">
+              <Nav.Link className="mx-2 fw-semibold" as={NavLink} to='/tv' end>
                   TV Shows
-                </NavLink>
               </Nav.Link>
               <NavDropdown title="❤ Wishlist" id="basic-nav-dropdown" className="mx-2 px-1">
-                <NavDropdown.Item>
-                  <NavLink
-                    className="text-muted text-decoration-none"
-                    to="/movies/wishlist"
-                  >
+                <NavDropdown.Item className={`fw-semibold ${styles.dropdown}`} href='/movies/wishlist'>
                     <span>
                       Movies
                       <sup className="ms-1 bg-light py-1 px-2 rounded-2">
                         {MoviesWishlist.length}
                       </sup>
                     </span>
-                  </NavLink>
                 </NavDropdown.Item>
-                <NavDropdown.Item href="/tv/wishlist" className="mx-1">
-                  <NavLink
-                    className="text-muted text-decoration-none"
-                    to="/tv/wishlist"
-                  >
+                <NavDropdown.Item className={`fw-semibold ${styles.dropdown}`} href='/tv/wishlist'>
                     <span>
                       TV Shows
                       <sup className="ms-1 bg-light py-1 px-2 rounded-2">
                         {ShowsWishlist.length}
                       </sup>
                     </span>
-                  </NavLink>
                 </NavDropdown.Item>
               </NavDropdown>
               <Form.Group className="mx-2">
@@ -93,79 +79,6 @@ export default function NavbarComp() {
           </Navbar.Collapse>
         </Container>
       </Navbar>
-      {/* <nav className={`navbar navbar-expand-lg text-center ${styles.navbar}`}>
-        <div className="container">
-          <Link className="navbar-brand fw-bold ms-4" to={"/"}>
-            Movie App
-          </Link>
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNav"
-            aria-controls="navbarNav"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span className="navbar-toggler-icon"></span>
-          </button>
-          <div
-            className={`collapse navbar-collapse ${styles.collapse}`}
-            id="navbarNav"
-          >
-            <ul className="navbar-nav ms-auto me-4">
-              <li className="nav-item mx-1">
-                <NavLink className="nav-link fw-semibold " to="/" end>
-                  Movies
-                </NavLink>
-              </li>
-              <li className="nav-item mx-1">
-                <NavLink className="nav-link fw-semibold " to="/tv" end>
-                  TV Shows
-                </NavLink>
-              </li>
-              <Dropdown>
-                <Dropdown.Toggle
-                  variant="transparent"
-                  id="dropdown-basic"
-                  className="text-muted p-2"
-                >
-                  <i className="fa-solid fa-heart me-1 fs-5"></i> Wishlist
-                </Dropdown.Toggle>
-
-                <Dropdown.Menu>
-                  <Dropdown.Item>
-                    <NavLink
-                      to="/movies/wishlist"
-                      className="text-decoration-none text-dark"
-                    >
-                      <span>
-                        Movies
-                        <sup className="ms-1 bg-light py-1 px-2 rounded-2">
-                          {MoviesWishlist.length}
-                        </sup>
-                      </span>
-                    </NavLink>
-                  </Dropdown.Item>
-                  <Dropdown.Item>
-                    <NavLink
-                      to="/tv/wishlist"
-                      className="text-decoration-none text-dark"
-                    >
-                      <span>
-                        TV Shows
-                        <sup className="ms-1 bg-light py-1 px-2 rounded-2">
-                          {ShowsWishlist.length}
-                        </sup>
-                      </span>
-                    </NavLink>
-                  </Dropdown.Item>
-                </Dropdown.Menu>
-              </Dropdown>
-            </ul>
-          </div>
-        </div>
-      </nav> */}
     </>
   );
 }
