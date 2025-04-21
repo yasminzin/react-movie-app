@@ -49,6 +49,7 @@ const MovieCard = ({ movie }) => {
                 textColor: "#fff",
                 pathColor: "#21d07a",
                 trailColor: "#204529",
+                zIndex : '1'
               })}
             />
           </div>

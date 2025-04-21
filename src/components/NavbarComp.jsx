@@ -30,7 +30,7 @@ export default function NavbarComp() {
 
   return (
     <>
-      <Navbar expand="lg" className={` ${styles.navbar}`}>
+      <Navbar expand="lg" className={`${styles.navbar}`}>
         <Container>
           <Navbar.Brand href="/" className="fw-bold">Movie App</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import axiosInstance from "../../apis/config";
-import { useSearchParams } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { Rating } from "primereact/rating";
 import { Container, Row, Col, Card } from "react-bootstrap";
@@ -13,8 +13,7 @@ const SearchResult = () => {
   const query = searchParams.get("query");
   const [results, setResults] = useState([]);
   const { language } = useSelector((state) => state.languages);
-
-  
+  const navigate = useNavigate()
 
   useEffect(() => {
     const fetchSearchResults = async () => {
@@ -56,11 +55,8 @@ const SearchResult = () => {
     };
 
     if (query) fetchSearchResults();
-  }, [query,language]);
+  }, [query, language]);
 
-  const handleViewDetails = (id) => {
-    console.log(`View details for item ${id}`);
-  };
 
   return (
     <Container className="my-4">
@@ -81,7 +77,9 @@ const SearchResult = () => {
                   variant="top"
                   src={
                     item.poster_path
-                      ? `${import.meta.env.VITE_TMDB_IMG_URL}/${item.poster_path}`
+                      ? `${import.meta.env.VITE_TMDB_IMG_URL}/${
+                          item.poster_path
+                        }`
                       : "path/to/placeholder-image.jpg"
                   }
                   alt={item.title}
@@ -106,7 +104,7 @@ const SearchResult = () => {
                   onClick={() => handleViewDetails(item.id)}
                   style={{ cursor: "pointer" }}
                 >
-                  {(item.title)?.split(" ").slice(0, 3).join(" ") || "Untitled"}
+                  {item.title?.split(" ").slice(0, 3).join(" ") || "Untitled"}
                 </Card.Title>
                 <Card.Text className="text-muted">
                   <span className="d-block mb-1">
@@ -127,7 +125,10 @@ const SearchResult = () => {
                     cancel={false}
                   />
                   <span className="d-block mb-1"></span>
-                  <i style={{cursor:"pointer"}} className="bi d-flex bi-heart text-warning"></i>
+                  <i
+                    style={{ cursor: "pointer" }}
+                    className="bi d-flex bi-heart text-warning"
+                  ></i>
                 </Card.Text>
               </Card.Body>
             </Card>
