@@ -117,6 +117,7 @@ export default function TVShows() {
                         className="bi bi-heart-fill text-warning d-flex"
                         onClick={() => dispatch(removeFromWishlsit(show))}
                         aria-label="Remove from wishlist"
+                        style={{cursor:"pointer"}}
                       ></i>
                     ) : (
                       <i
@@ -125,6 +126,7 @@ export default function TVShows() {
                           dispatch(addToWishlist({ ...show, type: "show" }))
                         }
                         aria-label="Add to wishlist"
+                        style={{cursor:"pointer"}}
                       ></i>
                     )}
                   </Card.Text>

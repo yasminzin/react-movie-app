@@ -32,25 +32,25 @@ export default function NavbarComp() {
     <>
       <Navbar expand="lg" className={` ${styles.navbar}`}>
         <Container>
-          <Navbar.Brand href="/">Movie App</Navbar.Brand>
+          <Navbar.Brand href="/" className="fw-bold">Movie App</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse
             id="basic-navbar-nav"
             className={`${styles.collapse} p-1`}
           >
             <Nav className="ms-auto">
-              <Nav.Link className="mx-1">
+              <Nav.Link className="mx-2">
                 <NavLink className="text-muted text-decoration-none" to="/">
                   Movies
                 </NavLink>
               </Nav.Link>
-              <Nav.Link className="mx-1">
+              <Nav.Link className="mx-2">
                 <NavLink className="text-muted text-decoration-none" to="/tv">
                   TV Shows
                 </NavLink>
               </Nav.Link>
-              <NavDropdown title="❤ Wishlist" id="basic-nav-dropdown">
-                <NavDropdown.Item className="mx-1">
+              <NavDropdown title="❤ Wishlist" id="basic-nav-dropdown" className="mx-2 px-1">
+                <NavDropdown.Item>
                   <NavLink
                     className="text-muted text-decoration-none"
                     to="/movies/wishlist"
@@ -77,7 +77,7 @@ export default function NavbarComp() {
                   </NavLink>
                 </NavDropdown.Item>
               </NavDropdown>
-              <Form.Group className="mx-1">
+              <Form.Group className="mx-2">
                 <Form.Select
                   value={language}
                   onChange={handleLanguageChange}

@@ -64,7 +64,7 @@ const SearchResult = () => {
 
   return (
     <Container className="my-4">
-      <h2 className="mb-4">Recommendations</h2>
+      <h2 className="mb-4">Search Results for "{query}"</h2>
       <Row>
         {results.map((item) => (
           <Col
@@ -127,7 +127,7 @@ const SearchResult = () => {
                     cancel={false}
                   />
                   <span className="d-block mb-1"></span>
-                  <i className="bi d-flex bi-heart text-warning"></i>
+                  <i style={{cursor:"pointer"}} className="bi d-flex bi-heart text-warning"></i>
                 </Card.Text>
               </Card.Body>
             </Card>

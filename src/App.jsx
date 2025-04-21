@@ -1,4 +1,3 @@
-import "./App.css";
 // import { BrowserRouter, Route, Routes } from "react-router";
 import HeaderLayout from "./components/HeaderLayout";
 import { lazy } from "react";
